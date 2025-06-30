@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { StudentDataService } from '../student-data-service';
 import { Home } from '../home/home';
 import { RouterModule } from '@angular/router';
@@ -17,9 +17,9 @@ export class Student {
   studentList: any [];
   constructor(private fb: FormBuilder,private instanceOfStudentService: StudentDataService){
      this.studentForm = this.fb.group({
-    ID: [''],
-    Name: [''],
-    Email: ['']
+    ID: ['',Validators.required],
+    Name: ['',Validators.required],
+    Email: ['',Validators.required]
   });
   const oldData = localStorage.getItem('studentskey');
   const parsedData: Student[] = oldData ? JSON.parse(oldData) : [];
@@ -33,6 +33,7 @@ export class Student {
     this.addnew = false;
   }
   onSubmit(){
+    if(this.studentForm.valid){
     const oldData = localStorage.getItem('studentskey');
     const parsedData: Student[] = oldData ? JSON.parse(oldData) : [];
     parsedData.push(this.studentForm.value);
@@ -41,4 +42,5 @@ export class Student {
     this.studentForm.reset();
     localStorage.setItem('studentskey',JSON.stringify(parsedData));
   }
+}
 }

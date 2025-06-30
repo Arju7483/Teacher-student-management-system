@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder,FormGroup,ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder,FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TeacherModel } from '../models/teacher-model.model';
 @Component({
@@ -16,10 +16,10 @@ export class Teacher {
   teacherList: any [];
   constructor(private fb: FormBuilder){
      this.teacherForm = this.fb.group({
-    ID: [''],
-    Name: [''],
-    Email: [''],
-    Dept: ['']
+    ID: ['',Validators.required],
+    Name: ['',Validators.required],
+    Email: ['',Validators.required],
+    Dept: ['',Validators.required]
   });
   const oldData = localStorage.getItem('teacherkey');
   const parsedData: TeacherModel[] = oldData ? JSON.parse(oldData) : [];
@@ -33,6 +33,7 @@ export class Teacher {
     this.addnew = false;
   }
   onSubmit(){
+    if(this.teacherForm.valid){
     const oldData = localStorage.getItem('teacherkey');
     const parsedData: TeacherModel[] = oldData ? JSON.parse(oldData) : [];
     parsedData.push(this.teacherForm.value);
@@ -40,5 +41,7 @@ export class Teacher {
     console.log(parsedData,this.teacherList[0]);
     this.teacherForm.reset();
     localStorage.setItem('teacherkey',JSON.stringify(parsedData));
+    }
+    
   }
 }

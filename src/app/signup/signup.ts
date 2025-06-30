@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
 @Component({
@@ -13,8 +13,8 @@ export class Signup {
   signupForm : FormGroup;
   constructor(private fb: FormBuilder, private authService: Auth, private router: Router){
     this.signupForm = this.fb.group({
-      username: [''],
-      password: ['']
+      username: ['',Validators.required],
+      password: ['',[Validators.required,Validators.minLength(4)]]
     })
   }
  onSubmit(){

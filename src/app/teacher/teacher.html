@@ -20,7 +20,7 @@
       <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label for="ID" class="form-label">Teacher's ID</label>
-          <input type="text" id="ID" formControlName="ID" class="form-control" />
+          <input type="text" id="ID" required formControlName="ID" class="form-control" />
         </div>
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
