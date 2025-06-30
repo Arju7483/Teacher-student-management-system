@@ -4,7 +4,6 @@ import { Home } from './home/home';
 import { StudentDataService } from './student-data-service';
 import { StudentModel } from './models/student-model.model';
 import { Teacher } from './teacher/teacher';
-import { Userinfo } from './services/userinfo';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 @Component({
