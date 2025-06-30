@@ -56,7 +56,7 @@ export class TruelyAllteacher {
     }
   }
   onDetails(currentTeacher: TeacherModel){
-    
+    //used routerlink in button
   }
 
 }

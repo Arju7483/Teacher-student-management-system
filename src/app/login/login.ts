@@ -27,4 +27,7 @@ export class Login {
       else alert("wrong credintial");
     }
   }
+  Back(){
+    this.router.navigate(['/'])
+  }
 }

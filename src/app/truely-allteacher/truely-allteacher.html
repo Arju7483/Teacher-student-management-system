@@ -24,21 +24,39 @@
    </table>
 </div>
  @if(isUpdate == true){
-        <div class="allteacher">
-         
-        <form [formGroup] = "updateTeacherForm" (ngSubmit)="Save()">
-            <button id = "cross" type="button" (click)="Back()">X</button>
-            <pre>
-            <label for="ID">Teachers ID  </label>
-            <input type="text" id="ID" formControlName = "ID" > <br>
-            <label for="name">Name  </label>
-            <input type="text" id="name" formControlName = "Name"> <br>
-            <label for="email">Email </label>
-            <input type="email" id="email" formControlName = "Email"> <br>
-            <label for="dept">Department </label>
-            <input type="text" id="dept" formControlName = "Dept"> <br>
-            <button type="submit" class="btn btn-danger" > Update</button>
-            </pre>
-        </form>
+  <div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <h5 class="mb-0">Update Teacher</h5>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="Back()"></button>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="updateTeacherForm" (ngSubmit)="Save()">
+        <div class="mb-3">
+          <label for="ID" class="form-label">Teacher's ID</label>
+          <input type="text" id="ID" formControlName="ID" class="form-control" />
         </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" formControlName="Name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="Email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="dept" class="form-label">Department</label>
+          <input type="text" id="dept" formControlName="Dept" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-danger">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
     }

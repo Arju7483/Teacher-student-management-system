@@ -23,4 +23,7 @@ export class Signup {
     this.router.navigate(['']);
   }
  }
+   Back(){
+    this.router.navigate(['/'])
+  }
 }
