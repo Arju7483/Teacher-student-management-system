@@ -1,0 +1,37 @@
+.add-view{
+    display: flex;
+    justify-content: center;
+}
+.inputform{
+    position: fixed;
+    top: 120px;
+    left: 120px;
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(19, 161, 133);
+    
+    
+}
+.inputblack{
+    margin-top: 100px;
+}
+#cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: 1px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cross:hover{
+    background-color:red;
+}

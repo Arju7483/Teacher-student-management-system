@@ -1,0 +1,10 @@
+.nv{
+    display: flex;
+    justify-content: right;
+    background-color: aquamarine;
+    padding: 10px;
+    column-gap: 10px;
+    position: fixed;
+    top: 10px;
+    left: 200px;
+}

@@ -1,0 +1,30 @@
+#cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: 1px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cross:hover{
+    background-color:red;
+}
+.allteacher{
+    position: fixed;
+    top: 120px;
+    left: 70px;
+    width: 1050px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(19, 161, 133);
+    
+    
+}

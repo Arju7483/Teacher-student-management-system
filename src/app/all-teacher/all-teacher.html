@@ -1,0 +1,52 @@
+
+<div class="container">
+   <table class = "table">
+    <thead>
+      <tr>
+        <th>ID</th> <th>Name</th> <th>Email</th> <th>Action</th>
+    </tr> 
+    @for (item of studentList; track $index) {
+        <tr>
+            <td>{{item.ID}}</td>
+            <td>{{item.Name}}</td> 
+            <td>{{item.Email}}</td> 
+            <td>
+                <button type="submit" class="btn btn-sm btn-success " (click)="onEdit(item)">Update</button>
+                <button type="submit" class="btn btn-sm btn-danger ms-2" (click)="onDelete(item.ID)">Delete</button>
+            </td>
+        </tr>
+    }
+    </thead>
+    
+   </table>
+</div>
+ @if(isUpdate == true){
+        <div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <h5 class="mb-0">Update Student</h5>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="Back()"></button>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="updateStudentForm" (ngSubmit)="Save()">
+        <div class="mb-3">
+          <label for="ID" class="form-label">Student ID</label>
+          <input type="text" id="ID" class="form-control" formControlName="ID">
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" class="form-control" formControlName="Name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" formControlName="Email">
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-warning">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    }

@@ -1,0 +1,44 @@
+
+<div class="container">
+    <h3 style="display: flex; justify-content: center;">Teacher's Section</h3><br>
+    <div class="add-view">
+        <ul style="list-style-type:none;">
+         <li><button class="btn btn-success" style="width: 200px;" (click) = "onAdd()">Add Teacher</button></li><br> 
+         <li>  <a [routerLink]="['/truelyAllTeacher']" class="btn btn-primary" style="width: 200px;">View All</a></li>   
+        </ul>
+        
+    </div>
+</div>
+    @if(addnew == true){
+        <div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <h5 class="mb-0">Add Teacher</h5>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="Back()"></button>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="ID" class="form-label">Teacher's ID</label>
+          <input type="text" id="ID" formControlName="ID" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" formControlName="Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="Email" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="dept" class="form-label">Department</label>
+          <input type="text" id="dept" formControlName="Dept" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+    }
+    
